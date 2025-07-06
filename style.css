@@ -1,0 +1,262 @@
+body{
+    background-color: #160C28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    cursor: url('assets/arrow.cur'), auto;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+
+.floating{
+    background-color: #554fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 40px 100px #D2C0ED30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #160C28;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #160C28;
+}
+td {
+    width: 100px;
+    height: 60px;
+    border: 3px solid #EDFFD9;
+    text-align: center;
+    vertical-align: middle;
+    color: #EDFFD9;
+    border-radius: 10px;
+    font-family: Poppins, sans-serif;
+}
+
+.cell-text{
+    padding: 10px;
+    cursor: url(assets/selecting-text.svg), auto;
+
+}
+
+.cell-text::selection, .editing-title::selection, input::selection, .list-input::selection{
+    background-color:#edffd9;
+    color: #160C28;
+    border-radius: 10px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset{
+    border-radius: 100px;
+    background-color: #160C28;
+    color: #EDFFD9;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: url(assets/pointer.svg), auto;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+.reset:hover{
+    transform: scale(1.05) rotate(2deg);
+}
+
+.reset:hover, .edit:hover, .download:hover{
+    background-color: #331C5E;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.reset:active, .edit:active, .download:active{
+    transform: scale(1);
+    box-shadow: none;
+}
+
+.edit, .download{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: url(assets/pointer.svg), auto;
+    border-radius: 100px;
+    background-color: #160C28;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.edit:hover{
+    transform: scale(1.05) rotate(15deg);
+}
+
+.edit:active{
+    transform: rotate(0deg);
+    transition: transform 0.1s ease;
+}
+
+.download:hover{
+    transform: scale(1.05) rotate(10deg);
+}
+
+.download:active{
+    transform: rotate(0deg);
+    transition: transform 0.1s ease;
+}
+
+.icon{
+    height: 30px;
+}
+
+.editing-menu, .menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #554fff;
+}
+
+.editing-menu{
+    width: 400px
+}
+
+.editing-divs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editing-title{
+    cursor: url(assets/selecting-text.svg), auto;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+.editing-title,.editing-value, .list-input{
+    color:  #EDFFD9;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.editing-value{
+    width: 40px;
+    height: 32px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.editing-value, .list-input{
+    font-style: normal;
+    padding: 10px 20px;
+    background-color: #160C28;
+    border-radius: 10px;
+    border: none;
+    font-size: 22px;
+    cursor: url(assets/selecting-text.svg), auto;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.editing-value:focus, .list-input:focus{
+    outline: none;
+    border: #edffd9 solid 5px;
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.editing-value:focus{
+    margin-right: 20px;
+}
+
+.list-input{
+    width: 332px;
+    height: 92px;
+    margin: 15px 0 32px 0;
+    resize: none;
+}
+
+.list-input::-webkit-scrollbar {
+    display: none;
+}
+
+.bottom-right {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: url(assets/pointer.svg), pointer;
+    user-select: none;
+    padding: 12px 24px;
+    color: #edffd9;
+    font-family: "Poppins", serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bottom-right:hover{
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.bottom-right:active{
+    transform: rotate(0deg);
+    opacity: 0.6;
+}
+
+.underline{
+    width: 0;
+    height: 2px;
+    background-color: #edffd9;
+    margin-top: 2px;
+    transition: width 0.3s ease;
+}
+
+.credits{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+.crepuscula{
+    margin-top: 1px;
+    height: 20px;
+    margin-right: 7px;
+}
+
+.bottom-right:hover .underline{
+    width: 103%;
+}
