@@ -26,12 +26,15 @@ let words = [
     "Risk assessment",
     "Web Development",
 ];
-generateEditingMenu()
+generateEditingMenu();
+downloadTable();
 
 
 // FUNCTIONS
 function generate_table(){
     document.querySelector(".download").style.display = "flex";
+    document.querySelector(".edit").style.display = "flex";
+
     // INITIALIZING
     if (menuState === "edit"){
         columns = Number(document.querySelector('.column-input').value);
@@ -41,8 +44,6 @@ function generate_table(){
             word = word.trim();
             return word.length > 25 ? word.slice(0, 25) + "..." : word;
         });
-
-        downloadTable();
     }
     menuState = "generate";
 
@@ -105,9 +106,9 @@ function generate_table(){
 }
 
 function generateEditingMenu(){
-    if (menuState === "edit") return;
     menuState = "edit";
     document.querySelector(".download").style.display = "none";
+    document.querySelector(".edit").style.display = "none";
 
     document.querySelector('.menu').innerHTML = `
         <div class="editing-menu">
